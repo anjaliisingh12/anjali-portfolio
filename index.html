@@ -2,21 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anjali | Portfolio</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Lottie -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  <!-- Cursor Style -->
   <style>
-    .cursor::after {
+    .typing::after {
       content: "|";
       margin-left: 4px;
       animation: blink 0.8s infinite;
@@ -31,30 +28,28 @@
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
   <div class="logo">Portfolio.</div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <nav id="navMenu">
+    <a href="#hero" onclick="toggleMenu()">Home</a>
+    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero" id="hero">
   <div class="content">
 
-    <!-- Name Typing -->
-    <h1><span id="name"></span></h1>
+    <h1><span id="name" class="typing"></span></h1>
+    <h2>I’m a <span id="role" class="typing"></span></h2>
 
-    <!-- Role Typing -->
-    <h2>I’m a <span id="role"></span></h2>
-
-    <!-- Paragraph with Cursor at End -->
     <p>
       Full Stack Developer with hands-on experience in building real-world
-      applications and scalable web platforms<span class="cursor"></span>
+      applications and scalable web platforms.
     </p>
 
     <div class="buttons">
@@ -79,7 +74,7 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
+<!-- ================= PORTFOLIO ================= -->
 <section class="portfolio" id="portfolio">
   <h2>My Projects</h2>
 
@@ -87,16 +82,13 @@
   <div class="project unified-project">
     <div class="project-text">
       <h3>Hospital Management System</h3>
-
       <a href="http://3.17.55.160" target="_blank">
         <button class="btn">Live Demo 🌐</button>
       </a>
-
       <p class="project-intro">
         A full-stack web application designed to automate and manage
         daily hospital operations efficiently.
       </p>
-
       <div class="project-details">
         <h4>Tech Stack</h4>
         <ul>
@@ -104,22 +96,18 @@
           <li>PHP</li>
           <li>MySQL</li>
         </ul>
-
         <h4>Key Features</h4>
         <ul>
           <li>Admin, Doctor & Patient portals</li>
           <li>Appointment & patient management</li>
           <li>Centralized hospital records</li>
         </ul>
-
         <h4>What I Learned</h4>
         <p>
-          Gained real-world experience in backend logic, database
-          management, and healthcare workflows.
+          Gained real-world experience in backend logic and database management.
         </p>
       </div>
     </div>
-
     <div class="video-like">
       <lottie-player src="Doctor.json" background="transparent" loop autoplay></lottie-player>
     </div>
@@ -129,16 +117,12 @@
   <div class="project unified-project">
     <div class="project-text">
       <h3>E-Commerce Grocery Application</h3>
-
       <a href="http://greencart-frontend-anjali-01.s3-website.us-east-2.amazonaws.com" target="_blank">
         <button class="btn">Live Demo 🌐</button>
       </a>
-
       <p class="project-intro">
-        A modern grocery shopping platform with a smooth and
-        user-friendly shopping experience.
+        A modern grocery shopping platform built using MERN stack.
       </p>
-
       <div class="project-details">
         <h4>Tech Stack</h4>
         <ul>
@@ -146,22 +130,18 @@
           <li>Node.js & Express.js</li>
           <li>MongoDB</li>
         </ul>
-
         <h4>Key Features</h4>
         <ul>
           <li>Product listing & cart management</li>
-          <li>RESTful APIs</li>
+          <li>User authentication with JWT</li>
           <li>Cloud deployment</li>
         </ul>
-
         <h4>What I Learned</h4>
         <p>
-          Improved my skills in full-stack development,
-          scalability, and cloud deployment.
+          Improved full-stack development and API integration skills.
         </p>
       </div>
     </div>
-
     <div class="video-like">
       <lottie-player src="grocery.json" background="transparent" loop autoplay></lottie-player>
     </div>
@@ -171,39 +151,31 @@
   <div class="project unified-project">
     <div class="project-text">
       <h3>Stock Price Prediction Model</h3>
-
       <a href="http://52.15.39.66:8501" target="_blank">
         <button class="btn">Live Demo 🌐</button>
       </a>
-
       <p class="project-intro">
-        A machine learning project to forecast future stock price
-        trends using historical market data.
+        A machine learning model to forecast stock trends.
       </p>
-
       <div class="project-details">
         <h4>Tech Stack</h4>
         <ul>
           <li>Python</li>
           <li>TensorFlow & Keras</li>
-          <li>LSTM Neural Networks</li>
+          <li>LSTM</li>
         </ul>
-
         <h4>Key Features</h4>
         <ul>
-          <li>Data preprocessing & normalization</li>
           <li>Time-series prediction</li>
+          <li>Data preprocessing</li>
           <li>Visualization & evaluation</li>
         </ul>
-
         <h4>What I Learned</h4>
         <p>
-          Strengthened my understanding of deep learning
-          and time-series forecasting.
+          Strengthened deep learning and forecasting skills.
         </p>
       </div>
     </div>
-
     <div class="video-like">
       <lottie-player src="Stock.json" background="transparent" loop autoplay></lottie-player>
     </div>
@@ -211,7 +183,7 @@
 
 </section>
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 <section class="contact-section" id="contact">
   <div class="contact-container">
     <div class="contact-left">
@@ -221,7 +193,6 @@
       <p><strong>Phone:</strong> +91 93419 22773</p>
       <p><strong>Location:</strong> India</p>
     </div>
-
     <div class="contact-right">
       <lottie-player src="Contact.json" background="transparent" loop autoplay></lottie-player>
     </div>
@@ -234,26 +205,43 @@ const roleText = "Full Stack Developer";
 
 let nameIndex = 0;
 let roleIndex = 0;
+let isDeleting = false;
 
-function typeName() {
-  if (nameIndex < nameText.length) {
-    document.getElementById("name").innerHTML += nameText.charAt(nameIndex);
-    nameIndex++;
-    setTimeout(typeName, 120);
+function typeEffect() {
+  const nameEl = document.getElementById("name");
+  const roleEl = document.getElementById("role");
+
+  if (!isDeleting) {
+    if (nameIndex < nameText.length) {
+      nameEl.innerHTML += nameText.charAt(nameIndex);
+      nameIndex++;
+    } else if (roleIndex < roleText.length) {
+      roleEl.innerHTML += roleText.charAt(roleIndex);
+      roleIndex++;
+    } else {
+      setTimeout(() => isDeleting = true, 1000);
+    }
   } else {
-    setTimeout(typeRole, 300);
+    if (roleIndex > 0) {
+      roleEl.innerHTML = roleText.substring(0, roleIndex - 1);
+      roleIndex--;
+    } else if (nameIndex > 0) {
+      nameEl.innerHTML = nameText.substring(0, nameIndex - 1);
+      nameIndex--;
+    } else {
+      isDeleting = false;
+    }
   }
+
+  setTimeout(typeEffect, isDeleting ? 60 : 100);
 }
 
-function typeRole() {
-  if (roleIndex < roleText.length) {
-    document.getElementById("role").innerHTML += roleText.charAt(roleIndex);
-    roleIndex++;
-    setTimeout(typeRole, 80);
-  }
-}
+window.onload = typeEffect;
 
-window.onload = typeName;
+function toggleMenu(){
+  const nav = document.getElementById("navMenu");
+  nav.classList.toggle("active");
+}
 </script>
 
 </body>
