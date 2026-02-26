@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anjali | Portfolio</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="port.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
     </p>
 
     <div class="buttons">
-      <a href="resume.pdf" target="_blank" download>
+      <a href="Resume.html" target="_blank" download>
         <button class="btn">Download CV</button>
       </a>
 
@@ -78,6 +78,7 @@
 <section class="portfolio" id="portfolio">
   <h2>My Projects</h2>
 
+<div class="projects-wrapper">
   <!-- HOSPITAL -->
   <div class="project unified-project">
     <div class="project-text">
@@ -146,12 +147,45 @@
       <lottie-player src="grocery.json" background="transparent" loop autoplay></lottie-player>
     </div>
   </div>
+  <!--AI propt saver-->
+  <div class="project unified-project">
+    <div class="project-text">
+      <h3>AI Prompt Saver</h3>
+      <a href="https://ai-prompt-saver-six.vercel.app/" target="_blank">
+        <button class="btn">Live Demo 🌐</button>
+      </a>
+      <p class="project-intro">
+        A smart web application to save and organize AI prompts efficiently.”.
+      </p>
+      <div class="project-details">
+        <h4>Tech Stack</h4>
+        <ul>
+          <li>React.js</li>
+          <li>Node.js & Express.js</li>
+          <li>MongoDB</li>
+        </ul>
+        <h4>Key Features</h4>
+        <ul>
+          <li>Save your Prompt text</li>
+          <li>Add a title and description</li>
+          <li>Delete when done</li>
+        </ul>
+        <h4>What I Learned</h4>
+        <p>
+          Developed CRUD operations for prompt storage.
+        </p>
+      </div>
+    </div>
+    <div class="video-like">
+      <lottie-player src="Ai.json" background="transparent" loop autoplay></lottie-player>
+    </div>
+  </div>
 
   <!-- STOCK -->
   <div class="project unified-project">
     <div class="project-text">
       <h3>Stock Price Prediction Model</h3>
-      <a href="http://52.15.39.66:8501" target="_blank">
+      <a href="https://stock-price-prediction-j52k2q8iaxvdxw3uhnive3.streamlit.app/" target="_blank">
         <button class="btn">Live Demo 🌐</button>
       </a>
       <p class="project-intro">
@@ -180,6 +214,7 @@
       <lottie-player src="Stock.json" background="transparent" loop autoplay></lottie-player>
     </div>
   </div>
+  </div>
 
 </section>
 
@@ -187,62 +222,23 @@
 <section class="contact-section" id="contact">
   <div class="contact-container">
     <div class="contact-left">
-      <h2>Contact Me</h2>
-      <p><strong>Name:</strong> Anjali</p>
-      <p><strong>Email:</strong> anjalisingh947299@gmail.com</p>
-      <p><strong>Phone:</strong> +91 93419 22773</p>
-      <p><strong>Location:</strong> India</p>
+    <form action="https://formspree.io/f/xzdaojny" method="POST" class="contact-form">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        
+        <input type="email" name="email" placeholder="Your Email" required>
+        
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        
+        <button type="submit" class="btn">Send Message</button>
+
+      </form>
     </div>
-    <div class="contact-right">
-      <lottie-player src="Contact.json" background="transparent" loop autoplay></lottie-player>
     </div>
+   
   </div>
 </section>
-
-<script>
-const nameText = "Anjali";
-const roleText = "Full Stack Developer";
-
-let nameIndex = 0;
-let roleIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-  const nameEl = document.getElementById("name");
-  const roleEl = document.getElementById("role");
-
-  if (!isDeleting) {
-    if (nameIndex < nameText.length) {
-      nameEl.innerHTML += nameText.charAt(nameIndex);
-      nameIndex++;
-    } else if (roleIndex < roleText.length) {
-      roleEl.innerHTML += roleText.charAt(roleIndex);
-      roleIndex++;
-    } else {
-      setTimeout(() => isDeleting = true, 1000);
-    }
-  } else {
-    if (roleIndex > 0) {
-      roleEl.innerHTML = roleText.substring(0, roleIndex - 1);
-      roleIndex--;
-    } else if (nameIndex > 0) {
-      nameEl.innerHTML = nameText.substring(0, nameIndex - 1);
-      nameIndex--;
-    } else {
-      isDeleting = false;
-    }
-  }
-
-  setTimeout(typeEffect, isDeleting ? 60 : 100);
-}
-
-window.onload = typeEffect;
-
-function toggleMenu(){
-  const nav = document.getElementById("navMenu");
-  nav.classList.toggle("active");
-}
-</script>
+<script src="port.js"></script>
 
 </body>
 </html>
